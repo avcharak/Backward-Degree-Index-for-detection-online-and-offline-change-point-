@@ -30,12 +30,12 @@ SPtest1=R;
 DSPtest1=diff(SPtest1);                              
 a=DSPtest1;
 a(a>0) = 0;
-[Net_test1] = Visibility (a,2); Net_test1=double(Net_test1);  % Μετασχηματισμός σε δίκτυο
-Net_Degree_test1=degrees_unda(Net_test1);   % υπολογίζω τον βαθμό δικτύου (back)
+[Net_test1] = Visibility (a,2); Net_test1=double(Net_test1);  % ΓΓ¥Γ΄Γ΅Γ³Γ·Γ§Γ¬Γ΅Γ΄Γ©Γ³Γ¬ΓΌΓ² Γ³Γ¥ Γ¤ΓΓªΓ΄ΓµΓ―
+Net_Degree_test1=degrees_unda(Net_test1);   % ΓµΓ°Γ―Γ«Γ―Γ£ΓΓ¦ΓΉ Γ΄Γ―Γ­ ΓΆΓ΅Γ¨Γ¬ΓΌ Γ¤Γ©ΓªΓ΄Γ½Γ―Γµ (back)
 Net_Degree_test1=Net_Degree_test1';
-MA2test1=movmean(Net_Degree_test1,nd);%plot(MA2test);hold on; plot(Net_Degree_test)   %κινούμενος μέσος όρος χρονοσειρά βαθμού
-MStd2test1=movstd(Net_Degree_test1,nd);%plot(MStd2test);%κινούμενη διακύμανση χρονοσειρά βαθμού
-MA2MStd2test1=MA2test1+MStd2test1;%plot(MA2MStd2test); %υπολογιζω την ποσότητα
+MA2test1=movmean(Net_Degree_test1,nd);%plot(MA2test);hold on; plot(Net_Degree_test)   %ΓªΓ©Γ­Γ―Γ½Γ¬Γ¥Γ­Γ―Γ² Γ¬ΓΓ³Γ―Γ² ΓΌΓ±Γ―Γ² Γ·Γ±Γ―Γ­Γ―Γ³Γ¥Γ©Γ±Γ ΓΆΓ΅Γ¨Γ¬Γ―Γ½
+MStd2test1=movstd(Net_Degree_test1,nd);%plot(MStd2test);%ΓªΓ©Γ­Γ―Γ½Γ¬Γ¥Γ­Γ§ Γ¤Γ©Γ΅ΓªΓ½Γ¬Γ΅Γ­Γ³Γ§ Γ·Γ±Γ―Γ­Γ―Γ³Γ¥Γ©Γ±Γ ΓΆΓ΅Γ¨Γ¬Γ―Γ½
+MA2MStd2test1=MA2test1+MStd2test1;%plot(MA2MStd2test); %ΓµΓ°Γ―Γ«Γ―Γ£Γ©Γ¦ΓΉ Γ΄Γ§Γ­ Γ°Γ―Γ³ΓΌΓ΄Γ§Γ΄Γ΅
 Adok1=(MA2MStd2test1>(mean(MA2MStd2test1)+2*std(MA2MStd2test1)));
 maximum1 = max(max(Adok1))
  [x1,y1]=find(Adok1==maximum1)
